@@ -1,0 +1,26 @@
+.rs{
+	border: 1px solid #eee;
+	padding: 4px 7px;
+	cursor: pointer;
+}
+
+#city_box{
+	position: relative;
+}
+
+#result_box{
+	position: absolute;
+	left: 1px;
+	top: 19px;
+	border: 1px solid #eee;
+}
+
+.onov{
+	background-color: #eee;
+	color: #169bb5;
+}
+
+.onout{
+	background-color: #fff;
+	color: #999;
+}

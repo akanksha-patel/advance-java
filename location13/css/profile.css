@@ -1,0 +1,9 @@
+.lnk, .cncl{
+	text-decoration: underline;
+	color: blue;
+	cursor: pointer;
+}
+
+.cncl{
+	display: none;
+}

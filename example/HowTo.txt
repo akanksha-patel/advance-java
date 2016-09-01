@@ -1,0 +1,10 @@
+jsp:setproperty says that if you want your form information to
+save in a bean object then use the property name of the bean 
+in the form field name. The setter standard action takes care of 
+setting the value with minimal efforts... see the case 4 and 5.
+
+In case 2 the problem was the user input in the form of parameter
+is always considered string, but the property of the bean may be
+int, float, date etc. then you further needed to parse before you 
+set the information. But the case 4, 5 takes care of parsing the 
+information as well.

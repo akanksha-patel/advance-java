@@ -1,0 +1,9 @@
+#msg{
+	border: 2px solid red;
+	width: 700px;
+	padding: 8px;
+	text-align: center;
+	font-family: verdana;
+	font-size: 24px;
+	color: red;
+}

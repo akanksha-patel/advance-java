@@ -1,0 +1,38 @@
+#msg{
+	border: 2px solid red;
+	width: 700px;
+	padding: 8px;
+	text-align: center;
+	font-family: verdana;
+	font-size: 24px;
+	color: red;
+}
+
+#tbl{
+	margin: 20px auto;
+	width: 70%;
+	/*border: 1px solid #555;*/
+	border-collapse: collapse;
+}
+
+#tbl td{
+	/*border: 1px solid #555;*/
+	border-collapse: collapse;
+}
+
+#tbl tr{
+	height: 50px;
+}
+
+.lbl{
+	text-align: right;
+	width: 30%;
+}
+
+.msg{
+	color: red;
+	border: 1px solid red;
+	padding: 4px 7px;
+	background-color: #fdf7f5;
+	display: none;
+}

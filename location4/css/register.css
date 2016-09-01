@@ -1,0 +1,21 @@
+#msg{
+	border: 2px solid red;
+	width: 700px;
+	padding: 8px;
+	text-align: center;
+	font-family: verdana;
+	font-size: 24px;
+	color: red;
+}
+
+#em_box{
+	position: relative;
+}
+
+#sug{
+	position: absolute;
+	left: 20px;
+	top: -45px;
+	display: none;
+	height: 40px;
+}

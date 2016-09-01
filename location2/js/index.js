@@ -1,0 +1,81 @@
+window.onload = initAll;
+
+var cn, st, ct;
+var cnparam;
+
+function initAll(){
+	getAllElements();
+
+	setAllActions();		
+}
+
+function getAllElements(){
+	cn = document.getElementById('country');
+	st = document.getElementById('state');
+	ct = document.getElementById('city');
+}
+
+function setAllActions(){
+	cn.onchange = collectStates;
+	st.onchange = collectCities;
+}
+
+var cityReq = null;
+function collectCities(){
+	cityReq = createRequestObject();
+
+	if(cityReq){
+		cityReq.open('GET', 'cities.do?stateid='+this.value, true);
+		cityReq.onreadystatechange = showCities;
+		cityReq.send(null);
+	}	
+}
+
+function showCities(){
+	if(cityReq.readyState==4){
+		if(cityReq.status==200){
+			ct.innerHTML = '<option value="0">Select</option>';
+			var val = eval('('+cityReq.responseText+')');
+
+			for(i=0;i<val.length;i++){
+				var opt = document.createElement('option');
+				opt.value = val[i].cityid;
+				opt.innerHTML = val[i].citynm;
+
+				ct.appendChild(opt);
+			}
+		}
+	}
+}
+
+var reqObj = null;
+function collectStates(){
+	reqObj = createRequestObject();
+
+	if(reqObj){
+		reqObj.open('GET', 'states.do?countryid='+this.value, true);
+		reqObj.onreadystatechange = showStates;
+		reqObj.send(null);
+	}
+}
+
+
+function showStates(){
+	if(reqObj.readyState==4){
+		if(reqObj.status==200){
+			st.innerHTML = "<option value='0'>Select</option>";
+			//alert(reqObj.responseText);
+			var val = eval('('+reqObj.responseText+')');
+			//alert(val);
+			for(i=0;i<val.length;i++){
+				//alert(val[i].stateid+" = "+val[i].statenm);
+				var opt = document.createElement('option');
+				opt.innerHTML = val[i].statenm;
+				opt.value = val[i].stateid;
+
+				st.appendChild(opt);
+			}
+		}
+	}
+}
+
